@@ -1,0 +1,72 @@
+<script type="text/javascript">
+<!--
+var hotdogPrice = 2;
+var hamburgerPrice = 4;
+var corndogPrice = 3;
+var nachoPrice = 5;
+var hotdogAccum = 0;
+var hamburgerAccum = 0;
+var corndogAccum = 0;
+var nachoAccum = 0;
+var orderType; 
+var numberItems;
+var errorFlag;
+var anotherOrder = "yes";
+var hotdogRate, hamburgerRate, corndogRate, nachoRate, totalRate;
+
+while (anotherOrder == "yes")
+{
+errorFlag = 0;
+orderType = prompt("hamburgers, hotdogs, corndogs, or nachos?", "");
+numberItems = prompt("How many Items?", "");
+numberItems = parseInt(numberItems);
+
+switch (orderType)
+{
+  case "hamburgers":
+  hamburgerAccum = hamburgerAccum + numberItems;
+  break;
+
+  case "hotdogs":
+  hotdogAccum = hotdogAccum + numberItems;
+  break;
+
+  case "corndogs":
+  corndogAccum = corndogAccum + numberItems;
+  break;
+
+  case "nachos":
+  nachoAccum = nachoAccum + numberItems;
+  break;
+
+  default:
+  alert("You typed:  " + orderType + "You must type hamburgers, hotdogs, corndogs, or nachos.");
+  errorFlag = 1;
+  break;
+}//end switch
+ if (errorFlag == 1)
+ {
+  anotherOrder == "yes";
+ }
+ else
+ {
+  anotherOrder = prompt("Do you have another order? yes/no?" , "");
+ }
+}//end loop
+hotdogRate = hotdogAccum * hotdogPrice;
+hamburgerRate = hamburgerAccum * hamburgerPrice;
+corndogRate = corndogAccum * corndogPrice;
+nachoRate = nachoAccum * nachoPrice;
+totalRate = hotdogRate + hamburgerRate + corndogRate + nachoRate;
+
+document.write("The total number of hot dogs purchased:  " + hotdogAccum);
+document.write("<br>The total number of hamburgers purchased:  " + hamburgerAccum);
+document.write("<br>The total number of corn dogs purchased:  " + corndogAccum);
+document.write("<br>The total number of nachos purchased:  " + nachoAccum);
+document.write("<br>The total amount of hotdogs: $" + hotdogRate);
+document.write("<br>The total amount of hamburgers: $" + hamburgerRate);
+document.write("<br>The total amount of corndogs: $" + corndogRate);
+document.write("<br>The total amount of nachos: $" + nachoRate);
+document.write("<br>The total amount: $" + totalRate);
+// -->
+</script>
